@@ -187,6 +187,30 @@
 
         </div>
         <!-- Section / End -->
+            
+        <!-- Section MAPS-->
+        <h3>Coordenadas Geograficas (En Grados Decimales)</h3>
+        <div class="submit-section">
+
+            <!-- Row -->
+            <div class="row with-forms">
+
+                <!-- Address -->
+                <div class="col-md-6">
+                    <h5>Latitud</h5>
+                    <input type="text">
+                </div>
+
+                <!-- City -->
+                <div class="col-md-6">
+                    <h5>Longitud</h5>
+                    <input type="text">
+                </div>
+            </div>
+            <!-- Row / End -->
+
+        </div>
+        <!-- Section / End maps-->
 
 
         <!-- Section -->
