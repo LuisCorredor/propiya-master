@@ -22,7 +22,7 @@
 
 <!-- Header Container
 ================================================== -->
-<?php require("/globals/menu.php") ?>
+<?php require(__DIR__."/globals/menu.php") ?>
 <!-- Header Container / End -->
 
 
