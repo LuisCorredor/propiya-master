@@ -159,29 +159,17 @@
             <div class="row with-forms">
 
                 <!-- Address -->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h5>Direcci&oacute;n</h5>
-                    <input type="text">
+                    <input type="text" id="autocomplete">
+                    <input name="Direccion" type="hidden" value="" id="address">
+                    <input name="Ciudad" type="hidden" value="" id="locality">
+                    <input name="Provincia" type="hidden" value="" id="administrative_area_level_1">
+                    <input name="CodigoPostal" type="hidden" value="" id="postal_code">
+                    <input name="Latitud" type="hidden" value="" id="lat">
+                    <input name="Longitud" type="hidden" value="" id="lng">
                 </div>
-
-                <!-- City -->
-                <div class="col-md-6">
-                    <h5>Ciudad</h5>
-                    <input type="text">
-                </div>
-
-                <!-- State -->
-                <div class="col-md-6">
-                    <h5>Provincia</h5>
-                    <input type="text">
-                </div>
-
-                <!-- Zip-Code -->
-                <div class="col-md-6">
-                    <h5>C&oacute;digo Postal</h5>
-                    <input type="text">
-                </div>
-
+                
             </div>
             <!-- Row / End -->
 
@@ -189,23 +177,13 @@
         <!-- Section / End -->
             
         <!-- Section MAPS-->
-        <h3>Coordenadas Geograficas (En Grados Decimales)</h3>
         <div class="submit-section">
 
             <!-- Row -->
             <div class="row with-forms">
 
-                <!-- Address -->
-                <div class="col-md-6">
-                    <h5>Latitud</h5>
-                    <input type="text">
-                </div>
+                <div style="height: 300px" class="col-md-12" id="map"></div>
 
-                <!-- City -->
-                <div class="col-md-6">
-                    <h5>Longitud</h5>
-                    <input type="text">
-                </div>
             </div>
             <!-- Row / End -->
 
@@ -383,7 +361,7 @@
 
 </div>
 <!-- Wrapper / End -->
-
-
+<script type="text/javascript" src="<?= base_url() ?>/assets/scripts/googlemap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=[INSERT_API_KEY_GOOGLE_MAP]&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
