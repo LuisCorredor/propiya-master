@@ -40,8 +40,6 @@ function initMap() {
     autocomplete.addListener('place_changed', function () {
         var place = autocomplete.getPlace()
 
-        console.log(place)
-
         getSectionAddress(place.address_components)
 
         map.fitBounds(place.geometry.viewport);

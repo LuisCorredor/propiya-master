@@ -25,10 +25,19 @@ class Publicaciones extends CI_Controller {
 		$tipo   = $this->session->userdata("tipo");
 		$perfil = "perfil-".$tipo;
 
+		$query = $this->db->from('propiedad')
+					  ->where('usuario_id', $this->session->userdata("id"))
+					  ->get();
+
+		if ($query->num_rows() > 0)
+			$data['publicaciones'] = $query->result();
+		else
+			$data['publicaciones'] = [];
+
 		/*
 			Front-end del perfil
 		*/
-		$this->load->view("publicaciones");
+		$this->load->view("publicaciones", $data);
 	}
 
 }

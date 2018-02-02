@@ -74,77 +74,33 @@
 				</tr>
 
 				<!-- Item #1 -->
-				<tr>
-					<td class="title-container">
-						<img src="<?= base_url() ?>/assets/images/listing-02.jpg" alt="">
-						<div class="title">
-							<h4><a href="#">Serene Uptown</a></h4>
-							<span>6 Bishop Ave. Perkasie, PA </span>
-							<span class="table-property-price">$900 / monthly</span>
-						</div>
-					</td>
-					<td class="expire-date">December 30, 2016</td>
-					<td class="action">
-						<a href="#"><i class="fa fa-pencil"></i> Editar</a>
-						<a href="#"><i class="fa  fa-eye-slash"></i> Ocultar</a>
-						<a href="#" class="delete"><i class="fa fa-remove"></i> Eliminar</a>
-					</td>
-				</tr>
-
-				<!-- Item #2 -->
-				<tr>
-					<td class="title-container">
-						<img src="<?= base_url() ?>/assets/images/listing-05.jpg" alt="">
-						<div class="title">
-							<h4><a href="#">Oak Tree Villas</a></h4>
-							<span>71 Lower River Dr. Bronx, NY</span>
-							<span class="table-property-price">$535,000</span>
-						</div>
-					</td>
-					<td class="expire-date">December 12, 2016</td>
-					<td class="action">
-						<a href="#"><i class="fa fa-pencil"></i> Editar</a>
-						<a href="#"><i class="fa  fa-eye-slash"></i> Ocultar</a>
-						<a href="#" class="delete"><i class="fa fa-remove"></i> Eliminar</a>
-					</td>
-				</tr>
-
-				<!-- Item #3 -->
-				<tr>
-					<td class="title-container">
-						<img src="<?= base_url() ?>/assets/images/listing-04.jpg" alt="">
-						<div class="title">
-							<h4><a href="#">Selway Apartments</a></h4>
-							<span>33 William St. Northbrook, IL </span>
-							<span class="table-property-price">$420,000</span>
-						</div>
-					</td>
-					<td class="expire-date">December 04, 2016</td>
-					<td class="action">
-						<a href="#"><i class="fa fa-pencil"></i> Editar</a>
-						<a href="#"><i class="fa  fa-eye-slash"></i> Ocultar</a>
-						<a href="#" class="delete"><i class="fa fa-remove"></i> Eliminar</a>
-					</td>
-				</tr>
-
-				<!-- Item #4 -->
-				<tr>
-					<td class="title-container">
-						<img src="<?= base_url() ?>/assets/images/listing-06.jpg" alt="">
-						<div class="title">
-							<h4><a href="#">Old Town Manchester</a></h4>
-							<span> 7843 Durham Avenue, MD  </span>
-							<span class="table-property-price">$420,000</span>
-						</div>
-					</td>
-					<td class="expire-date">November 27, 2016</td>
-					<td class="action">
-						<a href="#"><i class="fa fa-pencil"></i> Editar</a>
-						<a href="#"><i class="fa  fa-eye-slash"></i> Ocultar</a>
-						<a href="#" class="delete"><i class="fa fa-remove"></i> Eliminar</a>
-					</td>
-				</tr>
-
+				<?php foreach ($publicaciones as $publicacion) { ?>
+					<tr>
+						<td class="title-container">
+							<img src="<?= base_url() ?>/assets/images/listing-02.jpg" alt="">
+							<div class="title">
+								<h4><a href="#"><?= $publicacion->TituloPropiedad ?></a></h4>
+								<span><?= 
+									$publicacion->Direccion.', '.$publicacion->Ciudad.', '.$publicacion->CodigoPostal.' '.$publicacion->Provincia
+								?></span>
+								<span class="table-property-price">$<?= $publicacion->Precio ?> / monthly</span>
+							</div>
+						</td>
+						<td class="expire-date">December 30, 2016</td>
+						<td class="action">
+							<a href="#"><i class="fa fa-pencil"></i> Editar</a>
+							<a href="#"><i class="fa  fa-eye-slash"></i> Ocultar</a>
+							<a href="#" class="delete"><i class="fa fa-remove"></i> Eliminar</a>
+						</td>
+					</tr>
+				<?php } ?>
+				<?php if (count($publicaciones) == 0) { ?>
+					<tr>
+						<td colspan="3">
+							<h4>No tienes propiedades publicadas</h4>
+						</td>
+					</tr>
+				<?php } ?>
 			</table>
 			<a href="submit-property.html" class="margin-top-40 button">Submit New Property</a>
 		</div>

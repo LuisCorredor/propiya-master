@@ -132,6 +132,9 @@ CREATE TABLE `propiedad` (
   `TelefonoContacto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE `propiedad` CHANGE `id` `usuario_id` INT(11) NOT NULL;
+ALTER TABLE `propiedad` CHANGE `CodigoPostal` `CodigoPostal` VARCHAR(20) NULL;
+
 -- --------------------------------------------------------
 
 --

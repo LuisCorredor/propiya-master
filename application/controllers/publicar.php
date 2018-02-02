@@ -31,5 +31,35 @@ class Publicar extends CI_Controller {
 		$this->load->view("publicar-inmueble");
 	}
 
+	public function store()
+	{
+		/*
+			Obtener variables POST enviadas
+			por el formulario de registro.
+		*/
+		$data = $this->input->post();
+
+		if (isset($data['checks'])) {
+			$str = '';
+			foreach ($data['checks'] as $value)
+				$str.= $value.'|';
+
+			$str = substr($str, 0, -1);
+
+			unset($data['checks']);
+			$data['OtrasCaracteristicas'] = $str;
+		}
+
+		$data['usuario_id'] = $this->session->userdata("id");
+
+		/*
+		 * Agregar los datos previos en la
+		 * tabla Propiedad
+		 */
+		$this->db->insert('propiedad', $data);
+
+		redirect("publicaciones");
+	}
+
 }
 ?>
